@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Object</title>
+</head>
+
+<body>
+   <!-- 정보를 순서에 맞춰 정리 할 수 있는 것은 배열 
+       정보를 순서에 상관없이 정리 할 수 있는게 객체(이름이 있는 정리 정돈 상자) -->
+   <h1>Object</h1>
+   <h2>Create</h2>
+   <script>
+      // object --> "key" : "value";
+      let profile = {
+         "name": "donghan",
+         "age": 31
+      };
+      document.write("name : " + profile.name + "<br>");
+      document.write("age : " + profile.age + "<br>");
+      profile.hobby = "sports";
+      document.write("hobby : " + profile.hobby + "<br>");
+      profile["family name"] = "Kim";
+      document.write("family name : " + profile["family name"] + "<br>");
+   </script>
+
+   <h2>Iterate</h2>
+   <script>
+      // object에 있는 key를 꺼내서 코드를 하나하나 실행해줌.
+      for (var key in profile) {
+         document.write(key + ' : ' + profile[key] + '<br>');
+      }
+   </script>
+
+   <!-- 객체에는 배열,숫자,문자를 담을 수 있다. -->
+   <h2>Property & Method</h2>
+   <script>
+      // 함수 담기
+      // profile 객체에 showAll이란 변수에 값으로 함수를 넣을 수 있고
+      profile.showAll = function () {
+         for (var key in this) {
+            document.write(key + ' : ' + this[key] + '<br>');
+         }
+      }
+      // profile 객체에 소속된 showAll이라는 함수를 만들 수 있다.
+      // 또한 객체에 소속된 함수를 Method라고 부르고
+      // 객체에 소속된 변수(name,age,hobby 등등)를 Property라고 부른다.
+      profile.showAll();
+   </script>
+</body>
+
+</html>

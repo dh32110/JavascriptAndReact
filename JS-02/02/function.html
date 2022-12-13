@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Function</title>
+</head>
+
+<body>
+   <h1>Function</h1>
+   <h2>Basic</h2>
+   <ul>
+      <script>
+         function two() {
+            document.write('<li>2-1</li>');
+            document.write('<li>2-2</li>');
+         }
+         document.write('<li>1</li>');
+         two();
+         document.write('<li>3</li>');
+         two();
+      </script>
+      <h2>Parameter(매개변수) & Argument(인자)</h2>
+      <script>
+         function onePlusOne() {
+            document.write(1 + 1);
+         }
+
+         // function sum(parameter매개변수, parameter매개변수) {
+         //    document.write(a + b);
+         // }
+         // sum(argument인자, argument인자); 
+         // sum(3, 4);
+
+         function sum(a, b) {
+            document.write(a + b + '<br>');
+         }
+         sum(2, 3);
+         sum(3, 4);
+      </script>
+
+      <h2>Return</h2>
+      <script>
+         // return 값을 되돌려준다. 위의 예제보다 아래의 예제가 보다 더 자유롭게 이용할 수 있는 자유도가 주어짐.
+         function sum2(a, b){
+            return a + b;
+         }
+         document.write(sum2(2,3));
+         document.write('<div style= "color:red;">' +sum2(2,3)+ '</div>');
+         document.write('<div style= "font-size:3rem;">' +sum2(2,3)+ '</div>');
+      </script>
+   </ul>
+</body>
+
+</html>

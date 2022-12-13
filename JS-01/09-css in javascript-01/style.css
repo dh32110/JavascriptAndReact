@@ -1,0 +1,22 @@
+body{
+   background-color: beige;
+}
+
+h1{
+   transition: color .5s ease-in-out;
+}
+
+.clicked {
+   color: tomato;
+}
+
+@font-face {
+   font-family: 'EarlyFontDiary';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
+}
+
+.good-font{
+   font-family: 'EarlyFontDiary';
+}
