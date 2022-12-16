@@ -50,9 +50,9 @@ function Create(props){
       const body = event.target.body.value;
       props.onCreate(title,body);
     }}>
-      <p><input type="text" name="title" placeholder="title"></input></p>
+      <p><input type="text" name="title" placeholder="title" /></p>
       <p><textarea name="body" placeholder="body"></textarea></p>
-      <p><input type="submit" value="Create"></input></p>
+      <p><input type="submit" value="Create" /></p>
     </form>
   </article>
 }
@@ -71,11 +71,11 @@ function Update(props){
     <p><input type="text" name="title" placeholder="title" value={title} onChange= {event => {
       console.log(event.target.value);
       setTitle(event.target.value);
-    }}></input></p>
+    }} /></p>
     <p><textarea name="body" placeholder="body" value={body} onChange= {event => {
       setBody(event.target.value);
     }}></textarea></p>
-    <p><input type="submit" value="Update"></input></p>
+    <p><input type="submit" value="Update" /></p>
   </form>
 </article>
 }
@@ -102,10 +102,22 @@ function App() {
       }
     }
     content = <Article title={title} body={body}></Article>
-    contextControl = <li><a href= {'/update/' +id} onclick = {event => {
-      event.preventDefault();
-      setMode('UPDATE');
-    }}>Update</a></li>
+    contextControl = <>
+      <li><a href= {'/update/' +id} onclick = {event => {
+        event.preventDefault();
+        setMode('UPDATE');
+     }}>Update</a></li>
+     <li><input type="button" value="Delete" onClick={()=>{
+      const newTopics = []
+      for(let i=0; i<topics.length; i++){
+        if(topics[i].id !== id){
+          newTopics.push(topics[i]);
+        }
+      }
+      setTopics(newTopics);
+      setMode('WELCOME');
+     }} /></li>
+    </>
   } else if(mode === 'CREATE'){
     content = <Create onCreate={(_title,_body) => {
       const newTopic = {id:nextId,title:_title, body:_body}
