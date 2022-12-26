@@ -1,0 +1,27 @@
+body{
+   background-color: black;
+}
+.snowflake{
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background-color: white;
+   /* 눈송이 감추기 */
+   position: absolute;
+   top: -8px;
+   /* 애니메이션 추가 */
+   animation: fall 10s linear;
+}
+
+/* 눈송이가 위에서 아래로 내려오고 그 다음 사라지게 함. */
+/* 눈송이가 있는 곳에서 애니메이션이 시작되기 때문에 from은 비워둠 */
+@keyframes fall {
+   from{
+
+   }
+   to {
+      /* 눈송이를 화면의 끝까지 움직임 */
+      transform: translateY(100vh);
+      opacity: 0;
+   }
+}
